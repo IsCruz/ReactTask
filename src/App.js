@@ -6,7 +6,7 @@ import MyInfo from './Pages/MyInfo'
 import './App.css'
 import Login from './Pages/Login';
 import {ProtectedRoute} from './components/ProtectedRoute'
-import Logout from './components/genericComponents/Logout';
+
 
 class App extends React.Component {
  
@@ -23,7 +23,6 @@ class App extends React.Component {
       <Route exact path="/mytasks/view/:id" component={() => <h1>A View task page</h1>} />
       <ProtectedRoute exact path="/my-info" component={MyInfo} />
       <Route exact path="/login" component={Login} />
-      <Route exact path="/logout-page" render={() => Logout} />
       <Route exact path="*" component={() => "404 NOT FOUND"} />
       </Switch>
       

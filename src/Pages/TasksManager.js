@@ -4,42 +4,8 @@ import Jumbotron from '../components/genericComponents/Jumbotron'
 import Footer from '../components/genericComponents/Footer'
 import TaskList from '../components/TaskList'
 import AddTask from '../components/AddTask'
-const BASE_URL = 'http://localhost:4000/'
+import {getList, saveTask, deleteTask} from '../Services/TasksServices'
 
-function getList () {
-  return fetch(`${BASE_URL}todos`)
-    .then(response => response.json())
-    .then(data => {
-      let task = data.map((todo) => {
-        return todo
-      })
-      return task
-    })
-}
-
-function saveTask (task) {
-  return fetch(`${BASE_URL}todos/add`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(task)
-  })
-    .then(response => {return response.json()})
-    .catch(err => console.log(err))
-}
-
-function deleteTask(task) {
-  return fetch(`${BASE_URL}todos/delete`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(task)
-  })
-    .then(response => {console.log(response); return response.json()})
-    .catch(err => console.log(err))
-}
 
 class TasksManager extends React.Component {
     constructor (props) {
