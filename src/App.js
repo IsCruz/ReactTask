@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {HashRouter, Route, Switch} from 'react-router-dom'
 import Home from './Pages/Home'
 import TasksManager from './Pages/TasksManager'
 import MyInfo from './Pages/MyInfo'
@@ -13,7 +13,7 @@ class App extends React.Component {
   render () {
 
     return(
-      <BrowserRouter>
+      <HashRouter basename="/">
       <div>
       
       <Switch>
@@ -27,7 +27,7 @@ class App extends React.Component {
       </Switch>
       
       </div>
-      </BrowserRouter>
+      </HashRouter>
     )
   }
 }
