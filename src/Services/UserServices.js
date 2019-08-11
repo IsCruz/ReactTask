@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:4000'
+const BASE_URL = 'https://powerful-shelf-95000.herokuapp.com'
 
 
 export function getToken(data) {
